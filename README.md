@@ -53,6 +53,24 @@ After execution, the following files will be generated:
 
 -   **CSV Report:** `C:\Icinga2_Update_Report.csv` (Summary of actions taken for each machine)
 
+### 2.1\. Example Log File (C:\Icinga2_Update_Log.txt):
+```text
+[2025-03-14 12:00:00] Fetched Machines: XXSUPXX01
+[2025-03-14 12:00:05] Processing Machine: XXSUPXX01
+[2025-03-14 12:00:06] XXSUPXX01 is Live
+[2025-03-14 12:00:08] INFO: XXSUPXX01 - Icinga2 Version: 2.14.2
+[2025-03-14 12:00:10] INFO: XXSUPXX01 - Icinga2 Service Status: Running
+[2025-03-14 12:00:12] INFO: Attempting to Uninstall Icinga2 Client
+[2025-03-14 12:00:20] XXSUPXX01 - Uninstall Status: Previously installed Icinga2 client uninstalled
+[2025-03-14 12:00:25] XXSUPXX01 - New Icinga2 Client Download Status: Success
+[2025-03-14 12:01:00] XXSUPXX01 - Install Status: Installed
+```
+### 2.2\. Example CSV Report (C:\Icinga2_Update_Report.csv):
+```csv
+MachineName,Status,Icinga2Version,Icinga2Service,DownloadStatus,UninstallStatus,Icinga2Client2143
+XXSUPXX01,Live,2.14.2,Running,Success,Previously installed Icinga2 client uninstalled,Installed
+```
+
 Script Workflow
 ---------------
 
