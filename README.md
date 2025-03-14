@@ -30,8 +30,6 @@ Prerequisites
 
 -   PowerShell must be run as an Administrator.
 
--   Ensure that WinRM is enabled on remote machines.
-
 -   The script should be executed from a system with network access to all target machines.
 
 -   Active Directory module (if using AD-based machine discovery).
@@ -47,12 +45,7 @@ The script can be executed with a PowerShell terminal using the following comman
 powershell -ExecutionPolicy Bypass -File .\Icinga2_Upgrade.ps1
 ```
 
-### 2\. Parameters
-
-| Parameter | Description |
-| `CsvFilePath` | (Optional) Path to the output CSV file. Default: `C:\Icinga2_Update_Report.csv`. |
-
-### 3\. Expected Output
+### 2\. Expected Output
 
 After execution, the following files will be generated:
 
@@ -63,7 +56,7 @@ After execution, the following files will be generated:
 Script Workflow
 ---------------
 
-1.  Fetches the list of target machines (currently hardcoded but can be modified to use AD queries).
+1.  Fetches the list of target machines (currently hardcoded to use AD queries but can be modified).
 
 2.  For each machine:
 
@@ -84,8 +77,6 @@ Customization
 
 -   **Modifying Target Machines:**
 
-    -   The script currently processes a single machine (`INSUPLTITPH`).
-
     -   To scan multiple machines, modify:
 
         ```
@@ -98,15 +89,6 @@ Customization
 
     -   Modify the version check comparison.
 
-Troubleshooting
----------------
-
-| Issue | Possible Cause | Solution |
-| Script fails to connect to a machine | WinRM not enabled | Enable WinRM using `Enable-PSRemoting -Force` |
-| Uninstall fails | Incorrect registry keys | Manually uninstall Icinga2 and rerun the script |
-| Download fails | Network issues | Ensure the system has internet access |
-| Installation fails | Corrupt MSI file | Re-download the MSI and rerun the script |
-
 License
 -------
 
@@ -115,4 +97,4 @@ This project is open-source and available under the MIT License.
 Author
 ------
 
-Developed by **[Your Name]**.
+Developed by **Prathamesh Hankare**.
