@@ -1,4 +1,4 @@
-Icinga2 Automated Upgrade Script
+Icinga2 Windows Client Automated Upgrade Script
 ================================
 
 Overview
